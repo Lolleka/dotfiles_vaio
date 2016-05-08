@@ -1,2 +1,1 @@
-# scripts
-One line
+# dotfiles_vaio
