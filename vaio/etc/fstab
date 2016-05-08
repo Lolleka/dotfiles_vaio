@@ -1,0 +1,21 @@
+# /dev/sda6 LABEL=arch
+UUID=1510bae7-79ee-40e3-98bd-ac8a8b455030	/         	ext4      	rw,relatime,data=ordered	0 1
+
+# /dev/sda5 LABEL=boot
+UUID=e51f1751-4139-4b51-8efa-138956ca3fd6	/boot     	ext4      	rw,relatime,data=ordered	0 2
+
+# /dev/sda8 LABEL=var
+UUID=62e9e35f-e35c-4d9e-b9af-e60c9f54f317	/var      	reiserfs  	rw,relatime	0 2
+
+# /dev/sda9 LABEL=pm-cache
+UUID=0d6c1b1b-e4a3-4979-886b-418223689577	/var/cache/pacman/pkg	jfs       	rw,relatime	0 2
+
+# /dev/sda10
+UUID=2fcffc30-5e66-4d99-b47e-bcfde0d14889	/home     	ext4      	rw,relatime,data=ordered	0 2
+
+# /dev/sda3
+UUID=043201CF3201C720				/mnt/win	ntfs		rw,relatime,noauto,umask=222	0 0
+
+/dev/sda7 none swap defaults 0 0
+
+//192.168.178.46/Volume_1 /mnt/nasstorage cifs credentials=/etc/nascreds,rw,_netdev,uid=1000,gid=1000 0 0

@@ -1,0 +1,4 @@
+set preview_images false
+
+find istr
+find stage.py

@@ -1,0 +1,122 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+# Char glyps for powerline fonts
+# sep_left=""                        # Powerline separator left
+# sep_right=""                       # Powerline separator right
+# sep_l_left=""                      # Powerline light separator left
+# sep_l_right=""                     # Powerline light sepatator right
+# 
+# Global properties
+separator_block_width=10
+#full_text=
+separator=true
+
+[separator]
+
+[disk]
+color=#D0B198
+label=
+instance=$HOME
+command=/usr/libexec/i3blocks/disk 10
+interval=1
+
+[separator]
+
+[volume]
+label=VOL
+label=
+color=#AAAAAA
+instance=Master
+#instance=PCM
+command=/usr/libexec/i3blocks/volume
+interval=1
+signal=1
+
+#[memory]
+#label=MEM
+#command=/usr/libexec/i3blocks/memory
+#separator=false
+#interval=30
+
+#[swap]
+#label=SWAP
+#instance=swap
+#command=/usr/libexec/i3blocks/memory
+#interval=30
+[separator]
+
+[wireless]
+label=
+command=[[ $(iwgetid -r) == "" ]] && echo "Down" || iwgetid -r
+#instance=wlp2s0
+#instance=wlp3s0
+#command=/usr/libexec/i3blocks/network
+color=#B8D6BC
+interval=10
+
+[separator]
+
+[ethernet]
+label=E
+instance=enp4s0
+#instance=enp0s25
+command=/usr/libexec/i3blocks/network
+color=#00FF00
+interval=10
+
+[separator]
+#[cpu]
+#label=CPU
+#command=/usr/libexec/i3blocks/cpu_usage
+#interval=10
+#min_width=CPU: 100.00%
+#separator=false
+
+#[load]
+#command=/usr/libexec/i3blocks/load_average
+#interval=10
+
+[battery]
+#label=BAT
+#label=⚡
+command=/usr/libexec/i3blocks/battery
+interval=1
+
+[separator]
+color=#AA00AA
+
+[date]
+command=echo " $(date '+%m-%d-%y')"
+min_width=55-55-55
+interval=30
+separator=true
+color=#FFAA00
+
+[separator]
+color=#AA00AA
+
+[time]
+command=echo " $(date '+%H:%M')"
+min_width=55:55
+interval=30
+align=left
+color=#FFFF00
