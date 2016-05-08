@@ -1,2 +1,1 @@
 # dotfiles_vaio
-# random
