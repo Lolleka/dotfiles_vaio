@@ -50,7 +50,7 @@ runtime! archlinux.vim
     set mouse=a                    " Enable mouse
     set hidden                     " Quick buffer switching
     set ruler                      " Show cursor position
-    set clipboard=unnamed          " Set clipboard to X clipboard
+    set clipboard=unnamedplus      " Set clipboard to X clipboard
 " }}}
     
 " Appearance Settings {{{

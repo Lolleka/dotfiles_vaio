@@ -80,7 +80,7 @@ visualizer_output_name = "My FIFO"
 ## Keep in mind that sane values start with >=10.
 ##
 #
-visualizer_sync_interval = "1"
+visualizer_sync_interval = 10
 #
 ##
 ## Note: To enable spectrum frequency visualization

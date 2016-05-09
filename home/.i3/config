@@ -28,8 +28,8 @@ set $WS9 9:
 # font pango:monospace 8
 # font -*-anorexia-medium-*-*-*-11-*-*-*-*-*-iso10646-1
 
-font pango:Input Mono 16
-
+#font pango:Input Mono 16
+font pango:Zekton 16
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 12
@@ -171,8 +171,8 @@ bindsym $mod+r mode "resize"
 bar {
     mode dock
     position top 
-#    font pango:Dina, Icons 14
-    font pango:Input Mono, Icons 14
+    font pango:Input Mono Bold, Icons 14
+#    font pango:Zekton, Icons 14
 #    font pango:Terminus , Icons 14
     #font -*-anorexia-medium-*-*-*-11-*-*-*-*-*-*-*
     workspace_buttons yes
@@ -196,6 +196,7 @@ for_window [class="Xfce4-notifyd"] floating enable, border none, focus mode_togg
 for_window [window_role="pop-up"] floating enable
 for_window [title="^feh"] floating enable
 for_window [class="URxvt" instance="myurxvt"] floating enable move right 500px,move up 200px
+for_window [class="Orage"] floating enable move position 1600px 25 px, resize set 300 170
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Galculator"] floating enable
 for_window [class="URxvt" instance="myurxvt"] floating enable
@@ -232,10 +233,11 @@ client.placeholder		#000000 #ffa500 #ffffff #6E7987
 client.background		#0F1F32
 
 #assign application to workspace
-assign [class="Xfdesktop" instance="xfdesktop"] 9: desktop
-assign [class="^URxvt$" instance="^ncmpcpp$"] 3: terms
+assign [class="Xfdesktop" instance="xfdesktop"] $WS8
+assign [class="^URxvt$" instance="^ncmpcpp$"] $WS1
 assign [class="chromium"] $WS2
 assign [class="Vlc"] $WS4
 assign [class="xv/mplayer"] $WS4 
-assign [class="Gimp"] 6: gimp
-assign [class="Skype"] 2: skype
+assign [class="Gimp"] $WS5
+assign [class="Skype"] $WS3
+assign [class="Cutegram"] $WS3

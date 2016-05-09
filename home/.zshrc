@@ -68,7 +68,12 @@ if [ "$USERNAME" = "root" ]; then
 fi; 
 alias printpwd="pwd | sed 's|$HOME|~|' | sed -E 's|([^/]{3})[^/]*/|\1/|g'"
 setopt PROMPT_SUBST
-PROMPT='[%{$fg[yellow]%}%*%{$reset_color%}] %{$fg[$ucolor]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}$(printpwd) %{$reset_color%}$ '
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PROMPT='[%{$fg[yellow]%}%*%{$reset_color%}] %{$fg[$ucolor]%}%n%(?.%{$reset_color%}.%{$fg[red]%})@%{$fg[blue]%}%m %{$fg[yellow]%}$(printpwd) %{$fg_bold[yellow]%}$(parse_git_branch)%{$reset_color%}$ '
+#PROMPT='[%{$fg[yellow]%}%*%{$reset_color%}] %{$fg[$ucolor]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}$(printpwd) %{$reset_color%}$ '
 #RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 export EDITOR=vim
@@ -90,6 +95,8 @@ alias umount='sudo umount'
 alias sune="sudo ne"
 alias vi='vim'
 alias litplay='CACA_DRIVER=ncurses mplayer -vo caca -quiet'
+alias pacman='sudo pacman'
+alias kit='kitvpn up; sleep 0.5; kitvpn run vncviewer bonecloud.no-ip.biz:5901; kitvpn down'
 
 #alias ssh="TERM=gnome ssh"
 #alias st="transmission-remote --auth lolleka:helluva -torrent all -status"
@@ -122,7 +129,7 @@ if [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     while [ $sec -ge 1 ]; do
         echo "$sec..."
         let "sec=sec-1"
-        sleep 1
+        sleep 0.5
     done
     exec startx
 fi

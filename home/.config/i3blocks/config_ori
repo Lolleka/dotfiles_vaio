@@ -19,9 +19,18 @@
 # short_text
 # signal
 # urgent
-
+# Char glyps for powerline fonts
+# sep_left=""                        # Powerline separator left
+# sep_right=""                       # Powerline separator right
+# sep_l_left=""                      # Powerline light separator left
+# sep_l_right=""                     # Powerline light sepatator right
+# 
 # Global properties
-separator_block_width=15
+separator_block_width=10
+#full_text=
+separator=true
+
+[separator]
 
 [disk]
 color=#D0B198
@@ -29,6 +38,8 @@ label=
 instance=$HOME
 command=/usr/lib/i3blocks/disk 10
 interval=1
+
+[separator]
 
 [volume]
 label=VOL
@@ -42,74 +53,70 @@ signal=1
 
 #[memory]
 #label=MEM
-#command=/usr/lib/i3blocks/memory
+#command=/usr/libexec/i3blocks/memory
 #separator=false
 #interval=30
 
 #[swap]
 #label=SWAP
 #instance=swap
-#command=/usr/lib/i3blocks/memory
+#command=/usr/libexec/i3blocks/memory
 #interval=30
-
-#[wireless]
-#label=
-#command=[[ $(iwgetid -r) == "" ]] && echo "Down" || iwgetid -r
-##instance=wlp2s0
-##instance=wlp3s0
-##command=/usr/lib/i3blocks/network
-#color=#B8D6BC
-#interval=10
-
-#[ethernet]
-#label=E
-##instance=enp4s0
-#instance=enp0s25
-#command=/usr/lib/i3blocks/network
-#color=#00FF00
-#interval=10
+[separator]
 
 [wireless]
 label=
 command=[[ $(iwgetid -r) == "" ]] && echo "Down" || iwgetid -r
 #instance=wlp2s0
-##instance=wlp3s0
-##command=/usr/libexec/i3blocks/network
+#instance=wlp3s0
+#command=/usr/libexec/i3blocks/network
 color=#B8D6BC
 interval=10
 
+[separator]
 
+[ethernet]
+label=E
+instance=enp4s0
+#instance=enp0s25
+command=/usr/lib/i3blocks/network
+color=#00FF00
+interval=10
+
+[separator]
 #[cpu]
 #label=CPU
-#command=/usr/lib/i3blocks/cpu_usage
+#command=/usr/libexec/i3blocks/cpu_usage
 #interval=10
 #min_width=CPU: 100.00%
 #separator=false
 
 #[load]
-#command=/usr/lib/i3blocks/load_average
+#command=/usr/libexec/i3blocks/load_average
 #interval=10
 
 [battery]
-##label=BAT
-##label=⚡
+#label=BAT
+#label=⚡
 command=/usr/lib/i3blocks/battery
 interval=1
 
+[separator]
+color=#AA00AA
+
 [date]
-command=/usr/lib/i3blocks/date
-#command=echo " $(date '+%m-%d-%y')"
+command=echo " $(date '+%m-%d-%y')"
 min_width=55-55-55
 interval=30
 separator=true
-color=#7DC1CF
+color=#FFAA00
+
+[separator]
+color=#AA00AA
 
 [time]
 command=echo " $(date '+%H:%M')"
 min_width=55:55
 interval=30
 align=left
-color=#E1AA5D
-#*color4:     #7DC1CF
-#*color12:    #4E9FB1
-
+color=#FFFF00

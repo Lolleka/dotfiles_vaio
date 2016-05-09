@@ -1,6 +1,6 @@
 #!/bin/bash
 #nvidia-settings -a InitialPixmapPlacement=2
-nvidia-settings -l
+#nvidia-settings -l
 #compton -b --config ~/.config/compton.conf
 #slingshot-launcher -s &
 #killall slingshot-launcher
